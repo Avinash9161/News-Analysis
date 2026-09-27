@@ -1,34 +1,20 @@
-// src/components/Navbar.jsx
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
-  const links = [
-    { path: '/', label: '🔴 Live Feed' },
-    { path: '/corner/technology', label: 'Technology' },
-    { path: '/corner/sports', label: 'Sports' },
-    { path: '/corner/entertainment', label: 'Entertainment' },
-    { path: '/corner/operations', label: 'Operations' },
-    { path: '/corner/awards', label: 'Awards' }
-  ];
-
   return (
     <nav className="navbar">
       <div className="nav-container">
         <div className="nav-brand">
-          <h1>⚡ PulseBrief</h1>
-          <span className="brand-tag">Real-Time Gemini AI Summary</span>
+          <h1>PulseAI</h1>
+          <span className="brand-tag">24-Hour GenAI Feed</span>
         </div>
         <div className="nav-links">
-          {links.map((link) => (
-            <NavLink
-              key={link.path}
-              to={link.path}
-              className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-            >
-              {link.label}
-            </NavLink>
-          ))}
+          <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>All News</NavLink>
+          <NavLink to="/category/technology" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Technology</NavLink>
+          <NavLink to="/category/sports" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Sports</NavLink>
+          <NavLink to="/category/entertainment" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Entertainment</NavLink>
+          <NavLink to="/category/operations" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Operations</NavLink>
+          <NavLink to="/category/awards" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Awards</NavLink>
         </div>
       </div>
     </nav>
